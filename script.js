@@ -10,16 +10,31 @@ const cGt = document.querySelector("#c_gaet");
 let bTal;
 let cTal;
 
-let lGt = 0;
-let hGt = 100;
+let lGt;
+let hGt;
 
-let antal = 0;
+let antal;
 
 
 window.addEventListener("load", sidenVises);
 
 function sidenVises() {
     console.log("siden vises");
+
+    tal.value = "";
+    knap.classList = " ";
+    hoej.classList = " ";
+    lav.classList = " ";
+    rigtigt.classList = " ";
+    lav.removeEventListener("click", klikKnap);
+    hoej.removeEventListener("click", klikKnap);
+    rigtigt.removeEventListener("click", vind);
+    lGt = 0;
+    hGt = 100;
+    bTal = undefined;
+    cTal = undefined;
+    antal = 0;
+    cGt.textContent = "Jeg er klar til at gætte";
 
     knap.addEventListener("click", klikKnap);
 }
@@ -92,5 +107,7 @@ function vind() {
         angle: 270,
         origin: {y: -0.1}
     });
+
+    setTimeout (sidenVises, 5000)
 }
    
